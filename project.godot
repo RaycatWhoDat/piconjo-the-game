@@ -20,7 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ContraLike"
+config/name="Piconjo: The Game"
+config/description="A game made for Pico Day 2021"
 run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
 
