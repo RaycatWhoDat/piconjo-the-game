@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PiconjoAttackGun.wav-06f84e4be19edc3aaa0465df06214341.sample"
+
+[deps]
+
+source_file="res://assets/sounds/PiconjoAttackGun.wav"
+dest_files=[ "res://.import/PiconjoAttackGun.wav-06f84e4be19edc3aaa0465df06214341.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

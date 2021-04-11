@@ -1,0 +1,147 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Levels.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/bgs/bg_sky.png" type="Texture" id=4]
+[ext_resource path="res://assets/bgs/bg_layer2.png" type="Texture" id=5]
+[ext_resource path="res://assets/bgs/bg_layer3.png" type="Texture" id=6]
+[ext_resource path="res://assets/bgs/bg_layer1.png" type="Texture" id=7]
+[ext_resource path="res://assets/bgs/bg_ground.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/PlayerHealthBarBG.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/PlayerHealthBarFG.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/BossHealthBarBG.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/BossHealthBarFG.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/NameFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=14]
+
+[node name="Game" type="Node2D"]
+
+[node name="GlobalSoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Levels" parent="." instance=ExtResource( 3 )]
+position = Vector2( 464, 498 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( -299.91, 379.815 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_bottom = 700
+script = ExtResource( 14 )
+
+[node name="BossLockTween" type="Tween" parent="Camera"]
+
+[node name="ScreenShakeTween" type="Tween" parent="Camera"]
+
+[node name="ScreenShakeInterval" type="Timer" parent="Camera"]
+wait_time = 0.2
+
+[node name="ScreenShakeDelay" type="Timer" parent="Camera"]
+wait_time = 0.2
+
+[node name="Background" type="ParallaxBackground" parent="Camera"]
+follow_viewport_scale = 0.5
+
+[node name="Sky" type="ParallaxLayer" parent="Camera/Background"]
+motion_scale = Vector2( 0.2, 0.2 )
+
+[node name="SkyImage" type="Sprite" parent="Camera/Background/Sky"]
+position = Vector2( 1716.83, 171.986 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 600 )
+
+[node name="FarBuildings" type="ParallaxLayer" parent="Camera/Background"]
+motion_scale = Vector2( 0.4, 0.4 )
+
+[node name="FBImage" type="Sprite" parent="Camera/Background/FarBuildings"]
+position = Vector2( 1717.57, 327.005 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 513 )
+
+[node name="MidBuildings" type="ParallaxLayer" parent="Camera/Background"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="MBImage" type="Sprite" parent="Camera/Background/MidBuildings"]
+position = Vector2( 1712.98, 397.947 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 516 )
+
+[node name="CloseBuildings" type="ParallaxLayer" parent="Camera/Background"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="CBImage" type="Sprite" parent="Camera/Background/CloseBuildings"]
+position = Vector2( 1717.91, 504.822 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 376 )
+
+[node name="Ground" type="ParallaxLayer" parent="Camera/Background"]
+
+[node name="GroundImage" type="Sprite" parent="Camera/Background/Ground"]
+position = Vector2( 1720.74, 803.225 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6144, 215 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1053.73, 334.848 )
+script = ExtResource( 1 )
+
+[node name="BulletDelay" type="Timer" parent="Player"]
+process_mode = 0
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerHealthBar" type="TextureProgress" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -28.0
+margin_right = 266.0
+value = 100.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossHealthBar" type="TextureProgress" parent="UI"]
+visible = false
+margin_right = 266.0
+margin_bottom = 28.0
+value = 75.0
+texture_under = ExtResource( 11 )
+texture_progress = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossName" type="RichTextLabel" parent="UI"]
+visible = false
+margin_left = 4.0
+margin_top = 32.0
+margin_right = 235.0
+margin_bottom = 68.0
+custom_fonts/normal_font = ExtResource( 13 )
+bbcode_text = "BOSS NAME"
+text = "BOSS NAME"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerName" type="RichTextLabel" parent="UI"]
+margin_left = 4.52484
+margin_top = 535.52
+margin_right = 168.525
+margin_bottom = 573.52
+custom_fonts/normal_font = ExtResource( 13 )
+text = "Piconjo"
+__meta__ = {
+"_edit_use_anchors_": false
+}

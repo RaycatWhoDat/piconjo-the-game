@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/Arena2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/BuildingConnector.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Sign.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Arena1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Arena3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/BossArea.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/DeathZone.gd" type="Script" id=7]
+[ext_resource path="res://scenes/Arena4.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3377.48, 93.3262 )
+
+[node name="Levels" type="Node2D"]
+
+[node name="Arena1" parent="." instance=ExtResource( 4 )]
+
+[node name="Arena2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1210.31, -53.9895 )
+
+[node name="Arena3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1942.17, -360.111 )
+
+[node name="Arena4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3481.63, -78.3991 )
+
+[node name="BuildingConnector" parent="." instance=ExtResource( 2 )]
+position = Vector2( 576.848, 110.875 )
+
+[node name="BuildingConnector2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1835.09, 178.283 )
+
+[node name="BuildingConnector3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -586.185, 95.2692 )
+
+[node name="Sign" parent="." instance=ExtResource( 3 )]
+position = Vector2( 809.126, -35.2047 )
+
+[node name="Sign2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2167.62, 9.08875 )
+
+[node name="Sign3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -717.668, -1.86245 )
+
+[node name="DeathZone" type="Area2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="DeathAreaShape" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2( 1475.92, 402.665 )
+shape = SubResource( 1 )
+
+[node name="BossArea" parent="." instance=ExtResource( 6 )]
+
+[node name="BossArea2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1462.83, -9.51367 )
+
+[node name="BossArea3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2441.51, -9.51367 )
+[connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_DeathZone_body_entered"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PiconjoSwitchGun.wav-8411e4048fa792e97b965a31f9ad1c94.sample"
+
+[deps]
+
+source_file="res://assets/sounds/PiconjoSwitchGun.wav"
+dest_files=[ "res://.import/PiconjoSwitchGun.wav-8411e4048fa792e97b965a31f9ad1c94.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

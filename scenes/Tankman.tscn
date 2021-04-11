@@ -1,0 +1,222 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/tankman/TankmanWalking-0.png" type="Texture" id=1]
+[ext_resource path="res://assets/tankman/TankmanFirePrimary-1.png" type="Texture" id=2]
+[ext_resource path="res://assets/tankman/TankmanFirePrimary-2.png" type="Texture" id=3]
+[ext_resource path="res://assets/tankman/TankmanFireSecondary-0.png" type="Texture" id=4]
+[ext_resource path="res://assets/tankman/TankmanFirePrimary-0.png" type="Texture" id=5]
+[ext_resource path="res://assets/tankman/TankmanFireSecondary-1.png" type="Texture" id=6]
+[ext_resource path="res://assets/tankman/TankmanFireSecondary-2.png" type="Texture" id=7]
+[ext_resource path="res://assets/tankman/TankmanFireSecondary-3.png" type="Texture" id=8]
+[ext_resource path="res://assets/tankman/TankmanWalking-1.png" type="Texture" id=9]
+[ext_resource path="res://assets/tankman/TankmanWalking-2.png" type="Texture" id=10]
+[ext_resource path="res://scripts/Boss.gd" type="Script" id=11]
+
+[sub_resource type="Animation" id=1]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TankmanSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Fire (Primary)" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TankmanSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TankmanSprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 1 ), Vector2( -11, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TankmanSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Fire (Secondary) (Horizontal)" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TankmanSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TankmanSprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TankmanSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Fire (Secondary) (Vertical)" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TankmanSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TankmanSprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.45
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TankmanSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Walking" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TankmanSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TankmanSprite:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Fire (Primary)",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Fire (Secondary) (Vertical)",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Fire (Secondary) (Horizontal)",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 55.2857, 53.9439 )
+
+[node name="Tankman" type="KinematicBody2D" groups=[
+"boss",
+"boss1",
+]]
+script = ExtResource( 11 )
+
+[node name="TankmanPlayer" type="AnimationPlayer" parent="."]
+"anims/Fire (Primary)" = SubResource( 1 )
+"anims/Fire (Secondary) (Horizontal)" = SubResource( 2 )
+"anims/Fire (Secondary) (Vertical)" = SubResource( 3 )
+anims/Walking = SubResource( 4 )
+
+[node name="TankmanSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "Walking"
+frame = 1
+playing = true
+
+[node name="TankmanArea" type="CollisionShape2D" parent="."]
+position = Vector2( 6.32648, 0.943863 )
+shape = SubResource( 6 )
