@@ -1,7 +1,5 @@
 extends Actor
 
-export (int) var HEALTH_POINTS
-
 func _ready():
 	if is_in_group("boss1"):
 		HEALTH_POINTS = Constants.BOSS_1_HEALTH_POINTS
@@ -25,9 +23,6 @@ func disable_boss_area():
 	
 	if boss_shape:
 		boss_shape.call_deferred("set_disabled", true)
-
-func update_health_bar():
-	pass
 
 func cleanup():
 	var camera_node = get_node("/root/Game/Camera")
@@ -67,17 +62,6 @@ func die():
 	cleanup()
 	queue_free()
 
-func mod_color(color):
-	for node in get_children():
-		if node is AnimatedSprite:
-			node.modulate = color
-			
-func flash():
-	mod_color(Color.red)
-
-func unflash():
-	mod_color(Color.white)
-
 func instakill():
 	take_damage(HEALTH_POINTS)
 	
@@ -85,20 +69,11 @@ func take_damage(damage):
 	var player_node = get_node("/root/Game/Player")
 	if player_node.IN_BOSS_FIGHT:
 		flash()
+		var health_bar = get_node("/root/Game/UI/BossHealthBar")
+		var boss_name = get_node("/root/Game/UI/BossName")
 
 		HEALTH_POINTS -= damage
-		var health_bar = get_node("/root/Game/UI/BossHealthBar")
-		var boss_health_tween = health_bar.get_node("BossHPTween")
-		var boss_name = get_node("/root/Game/UI/BossName")
-		
-		boss_health_tween.interpolate_property(health_bar,
-			"value",
-			health_bar.value,
-			HEALTH_POINTS,
-			0.2,
-			Tween.TRANS_LINEAR,
-			Tween.EASE_OUT)
-		boss_health_tween.start()
+		update_health_bar(health_bar)
 
 		yield(get_tree().create_timer(0.08), "timeout")
 		

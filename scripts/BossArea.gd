@@ -36,7 +36,7 @@ func handle_player_entering_arena(body):
 	player_node.FOLLOW_PLAYER = false
 
 func _on_BossArea_body_entered(body):
-	if body.name == "Player" and not body.IN_BOSS_FIGHT and not $BossAreaShape.disabled:
+	if body.is_in_group("player") and not body.IN_BOSS_FIGHT and not $BossAreaShape.disabled:
 		var player_node = body
 		player_node.IN_BOSS_FIGHT = true
 		handle_player_entering_arena(body)

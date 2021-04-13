@@ -144,6 +144,16 @@ func handle_jumping():
 	else:
 		player_movement_state = MovementState.JUMP
 
+func take_damage(damage):
+	var health_bar = get_node("/root/Game/UI/PlayerHealthBar")
+	flash()
+	HEALTH_POINTS -= damage
+	update_health_bar(health_bar)
+	if HEALTH_POINTS <= 0:
+		handle_death()
+	else:
+		unflash()
+
 func get_bottom_of_camera(camera_node):
 	var first_position = camera_node.get_position()
 	var center_position = camera_node.get_camera_screen_center()

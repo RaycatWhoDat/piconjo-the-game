@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scenes/Piconjo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/SwordArea.gd" type="Script" id=2]
 [ext_resource path="res://assets/sounds/PiconjoAttackGun.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sounds/PiconjoAttackSword.wav" type="AudioStream" id=4]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.8813, 19.9932 )
@@ -1971,7 +1972,11 @@ tracks/4/keys = {
 radius = 6.12816
 height = 29.379
 
-[node name="Piconjo" type="KinematicBody2D"]
+[node name="Piconjo" type="KinematicBody2D" groups=[
+"damageable",
+"player",
+]]
+script = ExtResource( 5 )
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 48, 25.829 )

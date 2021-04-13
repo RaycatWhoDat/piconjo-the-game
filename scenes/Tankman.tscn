@@ -225,6 +225,7 @@ extents = Vector2( 55.2857, 53.9439 )
 [node name="Tankman" type="KinematicBody2D" groups=[
 "boss",
 "boss1",
+"damageable",
 ]]
 collision_layer = 3
 collision_mask = 3
@@ -238,7 +239,7 @@ anims/Walking = SubResource( 4 )
 
 [node name="TankmanSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-animation = "Walking"
+animation = "Fire (Primary)"
 offset = Vector2( 0, 1 )
 
 [node name="TankmanArea" type="CollisionShape2D" parent="."]
@@ -248,5 +249,11 @@ shape = SubResource( 6 )
 [node name="CannonMuzzle" type="Position2D" parent="."]
 position = Vector2( -61.3518, -30.204 )
 
+[node name="CannonTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="PistolMuzzle" type="Position2D" parent="."]
 position = Vector2( 38, -16 )
+
+[node name="PistolTimer" type="Timer" parent="."]
+wait_time = 0.1
