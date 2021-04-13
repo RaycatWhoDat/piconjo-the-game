@@ -43,10 +43,11 @@ func die():
 #	var shake_tween_node = camera_node.get_node("ScreenShakeTween")
 	var camera_tween_node = camera_node.get_node("BossLockTween")
 	var tween_duration = 0.5
+	var camera_punchout_amount = -0.25
 	
 #	camera_node.start_shake(5)
 #	yield(camera_node.get_node("ScreenShakeInterval"), "timeout")
-	
+	camera_tween_node.stop_all()
 	camera_tween_node.follow_property(camera_node, 
 		"position", 
 		camera_node.position, 
@@ -55,32 +56,57 @@ func die():
 		tween_duration, 
 		Tween.TRANS_EXPO, 
 		Tween.EASE_OUT)
+	camera_tween_node.interpolate_property(camera_node, 
+		"zoom", 
+		camera_node.zoom,
+		Vector2(camera_node.zoom.x + camera_punchout_amount, camera_node.zoom.y + camera_punchout_amount), 
+		tween_duration, 
+		Tween.TRANS_EXPO, 
+		Tween.EASE_OUT)
 	camera_tween_node.start()
 	cleanup()
 	queue_free()
 
-func flash(color):
+func mod_color(color):
 	for node in get_children():
 		if node is AnimatedSprite:
 			node.modulate = color
 			
+func flash():
+	mod_color(Color.red)
+
 func unflash():
-	flash(Color(1,1,1,1))
+	mod_color(Color.white)
 
-func take_damage(damage):
-	flash(Color(1,0,0,1))
-
-	HEALTH_POINTS -= damage
-	var health_bar = get_node("/root/Game/UI/BossHealthBar")
-	var boss_name = get_node("/root/Game/UI/BossName")
-	health_bar.value = HEALTH_POINTS
-
-	yield(get_tree().create_timer(0.08), "timeout")
+func instakill():
+	take_damage(HEALTH_POINTS)
 	
-	if HEALTH_POINTS <= 0:
-		health_bar.visible = false
-		boss_name.visible = false
-		call_deferred("die")
-	else:	
-		unflash()
+func take_damage(damage):
+	var player_node = get_node("/root/Game/Player")
+	if player_node.IN_BOSS_FIGHT:
+		flash()
+
+		HEALTH_POINTS -= damage
+		var health_bar = get_node("/root/Game/UI/BossHealthBar")
+		var boss_health_tween = health_bar.get_node("BossHPTween")
+		var boss_name = get_node("/root/Game/UI/BossName")
+		
+		boss_health_tween.interpolate_property(health_bar,
+			"value",
+			health_bar.value,
+			HEALTH_POINTS,
+			0.2,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_OUT)
+		boss_health_tween.start()
+
+		yield(get_tree().create_timer(0.08), "timeout")
+		
+		if HEALTH_POINTS <= 0:
+			health_bar.visible = false
+			boss_name.visible = false
+			player_node.number_of_bosses_killed += 1
+			call_deferred("die")
+		else:	
+			unflash()
 

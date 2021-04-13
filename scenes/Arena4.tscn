@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/bgs/arena4.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 57.9199, 53 )
@@ -35,3 +36,15 @@ shape = SubResource( 3 )
 [node name="Sign2" type="CollisionShape2D" parent="."]
 position = Vector2( 312.453, 138.004 )
 shape = SubResource( 3 )
+
+[node name="Box" parent="." instance=ExtResource( 2 )]
+position = Vector2( -434.312, 184.202 )
+
+[node name="Box2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -403.63, 184.156 )
+
+[node name="Box3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -403.948, 152.475 )
+
+[node name="Box4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -265.201, 88.5669 )

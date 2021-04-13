@@ -10,11 +10,10 @@
 [ext_resource path="res://assets/tankman/TankmanFireSecondary-3.png" type="Texture" id=8]
 [ext_resource path="res://assets/tankman/TankmanWalking-1.png" type="Texture" id=9]
 [ext_resource path="res://assets/tankman/TankmanWalking-2.png" type="Texture" id=10]
-[ext_resource path="res://scripts/Boss.gd" type="Script" id=11]
+[ext_resource path="res://scripts/logic/Tankman.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=1]
-length = 0.3
-loop = true
+length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("TankmanSprite:animation")
 tracks/0/interp = 1
@@ -34,10 +33,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 1, 2, 0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("TankmanSprite:offset")
@@ -46,10 +45,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, 1 ), Vector2( -11, 1 ) ]
+"values": [ Vector2( 0, 1 ), Vector2( -11, 1 ), Vector2( 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -91,6 +90,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 0, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("PistolMuzzle:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 50, -31 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 0.2
@@ -130,6 +141,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PistolMuzzle:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 38, -16 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -175,11 +198,6 @@ tracks/2/keys = {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Fire (Primary)",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "Fire (Secondary) (Vertical)",
@@ -194,6 +212,11 @@ animations = [ {
 "loop": true,
 "name": "Fire (Secondary) (Horizontal)",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Fire (Primary)",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -203,6 +226,8 @@ extents = Vector2( 55.2857, 53.9439 )
 "boss",
 "boss1",
 ]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 11 )
 
 [node name="TankmanPlayer" type="AnimationPlayer" parent="."]
@@ -214,9 +239,14 @@ anims/Walking = SubResource( 4 )
 [node name="TankmanSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "Walking"
-frame = 1
-playing = true
+offset = Vector2( 0, 1 )
 
 [node name="TankmanArea" type="CollisionShape2D" parent="."]
 position = Vector2( 6.32648, 0.943863 )
 shape = SubResource( 6 )
+
+[node name="CannonMuzzle" type="Position2D" parent="."]
+position = Vector2( -61.3518, -30.204 )
+
+[node name="PistolMuzzle" type="Position2D" parent="."]
+position = Vector2( 38, -16 )

@@ -14,7 +14,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ "Attack (Idle) (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,7 +50,7 @@ tracks/2/keys = {
 "values": [ Vector2( -1, 0 ), Vector2( 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -98,7 +98,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -110,7 +110,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -122,7 +122,7 @@ tracks/8/keys = {
 "values": [ true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -140,7 +140,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -152,7 +152,7 @@ tracks/0/keys = {
 "values": [ "Attack (Idle) (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -164,7 +164,7 @@ tracks/1/keys = {
 "values": [ 0, 1 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -176,7 +176,7 @@ tracks/2/keys = {
 "values": [ Vector2( -25, 0 ), Vector2( -27, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -224,7 +224,7 @@ tracks/6/keys = {
 "values": [ 180.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -236,7 +236,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -248,7 +248,7 @@ tracks/8/keys = {
 "values": [ true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -266,7 +266,7 @@ length = 0.5
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -278,7 +278,7 @@ tracks/0/keys = {
 "values": [ "Attack (Idle) (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -290,7 +290,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/path = NodePath("PiconjoSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -302,7 +302,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:offset")
+tracks/3/path = NodePath("PiconjoSprite:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -344,13 +344,13 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -362,7 +362,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -374,7 +374,7 @@ tracks/8/keys = {
 "values": [ false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -392,7 +392,7 @@ length = 0.4
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -404,7 +404,7 @@ tracks/0/keys = {
 "values": [ "Attack (Idle) (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -416,7 +416,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/path = NodePath("PiconjoSprite:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -428,7 +428,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:offset")
+tracks/3/path = NodePath("PiconjoSprite:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -470,13 +470,13 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -488,7 +488,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -500,7 +500,7 @@ tracks/8/keys = {
 "values": [ false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -514,7 +514,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -526,7 +526,7 @@ tracks/0/keys = {
 "values": [ "Idle (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -538,7 +538,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -565,7 +565,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -577,7 +577,7 @@ tracks/0/keys = {
 "values": [ "Idle (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -589,7 +589,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -617,7 +617,7 @@ tracks/3/keys = {
 resource_name = "PiconjoIdleSword"
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -629,7 +629,7 @@ tracks/0/keys = {
 "values": [ "Idle (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -641,7 +641,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -669,7 +669,7 @@ tracks/3/keys = {
 resource_name = "PiconjoIdleSwordLeft"
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -681,7 +681,7 @@ tracks/0/keys = {
 "values": [ "Idle (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -693,7 +693,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -722,7 +722,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -734,7 +734,7 @@ tracks/0/keys = {
 "values": [ "Attack (Jump) (Gun)", "Jump (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -746,7 +746,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -794,7 +794,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AudioStreamPlayer:stream")
+tracks/6/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -806,7 +806,7 @@ tracks/6/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -818,7 +818,7 @@ tracks/7/keys = {
 "values": [ true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/8/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -835,7 +835,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -847,7 +847,7 @@ tracks/0/keys = {
 "values": [ "Attack (Jump) (Gun)", "Jump (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -859,7 +859,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -907,7 +907,7 @@ tracks/5/keys = {
 "values": [ 180.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AudioStreamPlayer:stream")
+tracks/6/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -919,7 +919,7 @@ tracks/6/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:playing")
+tracks/7/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -931,7 +931,7 @@ tracks/7/keys = {
 "values": [ true, false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/8/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -949,7 +949,7 @@ length = 0.4
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -961,7 +961,7 @@ tracks/0/keys = {
 "values": [ "Attack (Jump) (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -973,7 +973,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -985,7 +985,7 @@ tracks/2/keys = {
 "values": [ Vector2( -7, -5 ), Vector2( -21, -5 ), Vector2( 12, 2 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1003,10 +1003,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("SwordArea/SwordShape:position")
@@ -1033,7 +1033,7 @@ tracks/6/keys = {
 "values": [ -45.2, 90.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1045,7 +1045,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1057,7 +1057,7 @@ tracks/8/keys = {
 "values": [ false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1075,7 +1075,7 @@ length = 0.4
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1087,7 +1087,7 @@ tracks/0/keys = {
 "values": [ "Attack (Jump) (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1099,7 +1099,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1111,7 +1111,7 @@ tracks/2/keys = {
 "values": [ Vector2( -19, -5 ), Vector2( -5, -5 ), Vector2( -37, 2 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1129,10 +1129,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("SwordArea/SwordShape:position")
@@ -1159,7 +1159,7 @@ tracks/6/keys = {
 "values": [ 45.0, 90.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1171,7 +1171,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1183,7 +1183,7 @@ tracks/8/keys = {
 "values": [ false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1200,7 +1200,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1212,7 +1212,7 @@ tracks/0/keys = {
 "values": [ "Jump (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1224,7 +1224,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1265,7 +1265,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1277,7 +1277,7 @@ tracks/0/keys = {
 "values": [ "Jump (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1289,7 +1289,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1331,7 +1331,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1343,7 +1343,7 @@ tracks/0/keys = {
 "values": [ "Jump (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1355,7 +1355,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1397,7 +1397,7 @@ length = 0.2
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1409,7 +1409,7 @@ tracks/0/keys = {
 "values": [ "Jump (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:flip_h")
+tracks/1/path = NodePath("PiconjoSprite:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1421,7 +1421,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1462,7 +1462,7 @@ length = 0.8
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1474,7 +1474,7 @@ tracks/0/keys = {
 "values": [ "Attack (Walk) (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1486,7 +1486,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1498,7 +1498,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( -1, 0 ), Vector2( 0, 1 ), Vector2( -1, 0 ), Vector2( 1, 1 ), Vector2( -1, 0 ), Vector2( 1, 1 ), Vector2( -1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1546,7 +1546,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1558,7 +1558,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1570,7 +1570,7 @@ tracks/8/keys = {
 "values": [ true, false, true, false, true, false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1587,7 +1587,7 @@ length = 0.8
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1599,7 +1599,7 @@ tracks/0/keys = {
 "values": [ "Attack (Walk) (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1611,7 +1611,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1623,7 +1623,7 @@ tracks/2/keys = {
 "values": [ Vector2( -26, 1 ), Vector2( -24, 0 ), Vector2( -26, 1 ), Vector2( -24, 0 ), Vector2( -26, 1 ), Vector2( -24, 0 ), Vector2( -26, 1 ), Vector2( -24, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1671,7 +1671,7 @@ tracks/6/keys = {
 "values": [ 180.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("AudioStreamPlayer:stream")
+tracks/7/path = NodePath("PiconjoAudioPlayer:stream")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1683,7 +1683,7 @@ tracks/7/keys = {
 "values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayer:playing")
+tracks/8/path = NodePath("PiconjoAudioPlayer:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1695,7 +1695,7 @@ tracks/8/keys = {
 "values": [ true, false, true, false, true, false, true, false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/9/path = NodePath("PiconjoAudioPlayer:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1712,7 +1712,7 @@ length = 0.6
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1724,7 +1724,7 @@ tracks/0/keys = {
 "values": [ "Walk (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1736,7 +1736,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1748,7 +1748,7 @@ tracks/2/keys = {
 "values": [ Vector2( -1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1777,7 +1777,7 @@ length = 0.6
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1789,7 +1789,7 @@ tracks/0/keys = {
 "values": [ "Walk (Gun)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1801,7 +1801,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1813,7 +1813,7 @@ tracks/2/keys = {
 "values": [ Vector2( -24, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1842,7 +1842,7 @@ length = 0.6
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1854,7 +1854,7 @@ tracks/0/keys = {
 "values": [ "Walk (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1866,7 +1866,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1878,7 +1878,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1907,7 +1907,7 @@ length = 0.6
 loop = true
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/path = NodePath("PiconjoSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -1919,7 +1919,7 @@ tracks/0/keys = {
 "values": [ "Walk (Sword)" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/path = NodePath("PiconjoSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1931,7 +1931,7 @@ tracks/1/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:offset")
+tracks/2/path = NodePath("PiconjoSprite:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1943,7 +1943,7 @@ tracks/2/keys = {
 "values": [ Vector2( -25, 0 ), Vector2( -25, 0 ), Vector2( -25, 0 ), Vector2( -25, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimatedSprite:flip_h")
+tracks/3/path = NodePath("PiconjoSprite:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1971,17 +1971,17 @@ tracks/4/keys = {
 radius = 6.12816
 height = 29.379
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Piconjo" type="KinematicBody2D"]
 
 [node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 48, 26 )
+position = Vector2( 48, 25.829 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PiconjoShape" type="CollisionShape2D" parent="."]
 position = Vector2( 15.8728, 19.4454 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="PiconjoPlayer" type="AnimationPlayer" parent="."]
 anims/PiconjoIdleAttackGun = SubResource( 2 )
 anims/PiconjoIdleAttackGunLeft = SubResource( 3 )
 anims/PiconjoIdleAttackSword = SubResource( 4 )
@@ -2005,22 +2005,22 @@ anims/PiconjoWalkGunLeft = SubResource( 21 )
 anims/PiconjoWalkSword = SubResource( 22 )
 anims/PiconjoWalkSwordLeft = SubResource( 23 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+[node name="PiconjoAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 volume_db = -15.0
 
-[node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
+[node name="PiconjoSprite" parent="." instance=ExtResource( 1 )]
 position = Vector2( 24.2584, 19.9392 )
 scale = Vector2( 0.663509, 0.663509 )
-animation = "Walk (Gun)"
-offset = Vector2( -1, 0 )
+animation = "Attack (Idle) (Sword)"
+offset = Vector2( -7, -7 )
 
 [node name="SwordArea" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="SwordShape" type="CollisionShape2D" parent="SwordArea"]
-position = Vector2( 26, 8 )
-rotation = 0.785398
+position = Vector2( 7.81043, 8.07567 )
+rotation = -0.788889
 shape = SubResource( 24 )
 disabled = true
 [connection signal="body_entered" from="SwordArea" to="SwordArea" method="_on_SwordArea_body_entered"]

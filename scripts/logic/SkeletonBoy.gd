@@ -1,1 +1,1 @@
-extends Actor
+extends "res://scripts/Boss.gd"

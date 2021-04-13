@@ -5,7 +5,7 @@ export (String) var BOSS_2_AREA_NODE_NAME = "BossArea2"
 export (String) var BOSS_3_AREA_NODE_NAME = "BossArea3"
 export (String) var BOSS_4_AREA_NODE_NAME = "BossArea4"
 
-export (int) var BOSS_1_HEALTH_POINTS = 5
+export (int) var BOSS_1_HEALTH_POINTS = 15
 export (int) var BOSS_2_HEALTH_POINTS = 20
 export (int) var BOSS_3_HEALTH_POINTS = 25
 export (int) var BOSS_4_HEALTH_POINTS = 30

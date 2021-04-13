@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SBIdleSword.png-02742fc8f8e5013439e4a5e022eb58a4.stex"
+path="res://.import/SBStandAttackSword-0.png-c71840eea2ea80c48100f4f068854bcf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/skeleton_boy/SBIdleSword.png"
-dest_files=[ "res://.import/SBIdleSword.png-02742fc8f8e5013439e4a5e022eb58a4.stex" ]
+source_file="res://assets/skeleton_boy/SBStandAttackSword-0.png"
+dest_files=[ "res://.import/SBStandAttackSword-0.png-c71840eea2ea80c48100f4f068854bcf.stex" ]
 
 [params]
 
