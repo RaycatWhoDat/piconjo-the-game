@@ -24,6 +24,14 @@ var is_attacking = false
 var is_facing_left = false
 var number_of_bosses_killed = 0
 
+func _init():
+	HEALTH_POINTS = 25
+	
+func _ready():
+	var player_health_bar = get_node("/root/Game/UI/PlayerHealthBar")
+	player_health_bar.max_value = HEALTH_POINTS
+	player_health_bar.value = player_health_bar.max_value
+
 func change_animation(movement_state, weapon_type):
 	var animation_player_node = get_node(str(entity_name, "Player"))
 	var movement_name = movement_names[movement_state]

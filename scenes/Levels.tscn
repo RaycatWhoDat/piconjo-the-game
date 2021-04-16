@@ -53,8 +53,8 @@ position = Vector2( 1475.92, 402.665 )
 shape = SubResource( 1 )
 
 [node name="Tankman" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1439.69, -106.908 )
-scale = Vector2( 0.572141, 0.572141 )
+position = Vector2( 1449, -107 )
+scale = Vector2( 0.669956, 0.669956 )
 
 [node name="BossArea" parent="." instance=ExtResource( 6 )]
 position = Vector2( 185.307, 7.1272 )
