@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/TankmanCannon.wav-1a1694ef652de182af9332031a0947d8.sample"
+
+[deps]
+
+source_file="res://assets/sounds/TankmanCannon.wav"
+dest_files=[ "res://.import/TankmanCannon.wav-1a1694ef652de182af9332031a0947d8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

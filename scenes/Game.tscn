@@ -43,6 +43,10 @@ wait_time = 0.2
 [node name="Background" type="ParallaxBackground" parent="Camera"]
 follow_viewport_scale = 0.5
 
+[node name="HeatHazeColoration" type="CanvasModulate" parent="Camera/Background"]
+visible = false
+color = Color( 0.972549, 0.823529, 0.776471, 1 )
+
 [node name="Sky" type="ParallaxLayer" parent="Camera/Background"]
 motion_scale = Vector2( 0.2, 0.2 )
 
@@ -82,7 +86,7 @@ region_rect = Rect2( 0, 0, 6144, 376 )
 [node name="Ground" type="ParallaxLayer" parent="Camera/Background"]
 
 [node name="GroundImage" type="Sprite" parent="Camera/Background/Ground"]
-position = Vector2( 1720.74, 803.225 )
+position = Vector2( 1654, 848.609 )
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 6144, 215 )

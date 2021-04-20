@@ -2020,6 +2020,7 @@ volume_db = -15.0
 position = Vector2( 24.2584, 19.9392 )
 scale = Vector2( 0.663509, 0.663509 )
 animation = "Attack (Idle) (Gun)"
+frame = 1
 offset = Vector2( -1, 0 )
 
 [node name="SwordArea" type="Area2D" parent="."]

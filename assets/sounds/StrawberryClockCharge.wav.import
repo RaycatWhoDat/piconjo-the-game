@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/StrawberryClockCharge.wav-cd4dbc0dac62e9bba8031c4cc69016af.sample"
+
+[deps]
+
+source_file="res://assets/sounds/StrawberryClockCharge.wav"
+dest_files=[ "res://.import/StrawberryClockCharge.wav-cd4dbc0dac62e9bba8031c4cc69016af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -23,52 +23,68 @@ var cannon_delay = 1
 var cannon_range = 250
 var muzzle_velocity = 350
 
-var pistol_delay = 0.1
-var pistol_range = 200
+var pistol_delay = 0.25
+var horizontal_pistol_range = 200
+var vertical_pistol_range = 100
 
 func _init():
 	SPEED = full_speed
 
 func _ready():
 	# warning-ignore:return_value_discarded
-	cannon_timer.connect("timeout", self, "change_state", [BossAction.ADVANCING])
-	tankman_player.connect("animation_finished", self, "toggle_attacking")
+	cannon_timer.connect("timeout", self, "change_state", [BossAction.ADVANCING, false])
+	pistol_timer.connect("timeout", self, "change_state", [BossAction.RETREATING, false])
 
 func attack(timer, delay):
 	var firing_animation
+	var is_close_range = global_position.distance_to(player_node.global_position) < vertical_pistol_range
 	if boss_action == BossAction.ADVANCING:
 		firing_animation = "Fire (Primary)"
 	elif boss_action == BossAction.RETREATING:
-		firing_animation = "Fire (Secondary) (Horizontal)"
+		if is_close_range:
+			firing_animation = "Fire (Secondary) (Vertical)"
+		else:
+			firing_animation = "Fire (Secondary) (Horizontal)"
 
 	if timer.is_stopped():
-		change_state(BossAction.STANDING)
+		change_state(BossAction.STANDING, true)
 		velocity = Vector2.ZERO
-		toggle_attacking()
-		tankman_player.play(firing_animation)
-		tankman_player.advance(0)
-		timer.start(delay)
-#		if firing_animation == "Fire (Primary)":
-		var cannonball = Cannonball.instance()
-		owner.add_child(cannonball)
-		cannonball.global_transform = $CannonMuzzle.global_transform
-	elif "Secondary" in firing_animation and pistol_timer.time_left == 0:
-		change_state(BossAction.STANDING)
-		velocity = Vector2.ZERO
-		var bullet = Bullet.instance()
-		owner.add_child(bullet)
-		bullet.global_transform = $PistolMuzzle.global_transform
+		if "Primary" in firing_animation:
+			$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanUgh.wav")
+			$TankmanAudioPlayer.volume_db = -2.5
+			$TankmanAudioPlayer.play()
+			yield(get_tree().create_timer($TankmanAudioPlayer.stream.get_length()), "timeout")
+			tankman_player.play(firing_animation)
+			tankman_player.advance(0)
+			timer.start(delay)
+			$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanCannon.wav")
+			$TankmanAudioPlayer.volume_db = -5
+			$TankmanAudioPlayer.play()
+			yield(get_tree().create_timer(0.2), "timeout")
+			var cannonball = Cannonball.instance()
+			owner.add_child(cannonball)
+			cannonball.global_transform = $CannonMuzzle.global_transform
+		elif "Secondary" in firing_animation:
+			tankman_player.play(firing_animation)
+			tankman_player.advance(0)
+			timer.start(delay)
+			var bullet = Bullet.instance()
+			owner.add_child(bullet)
+			bullet.global_transform = $PistolMuzzle.global_transform
+			bullet.rotation_degrees = 0
+			if "Vertical" in firing_animation:
+				bullet.rotation_degrees = 45 
 
 func fire_cannon():
-	attack(cannon_timer, cannon_delay)
+	call_deferred("attack", cannon_timer, cannon_delay)
 
 func fire_pistol():
-	attack(pistol_timer, pistol_delay)
-	
-func toggle_attacking(_animation_name = null):
-	is_attacking = not is_attacking
+	call_deferred("attack", pistol_timer, pistol_delay)
 
-func change_state(action):
+func change_state(action, attacking):
+	$TankmanAudioPlayer.stop()
+	$TankmanAudioPlayer.volume_db = 0
+	is_attacking = attacking
 	boss_action = action
 	if action == BossAction.RETREATING:
 		SPEED = reduced_speed
@@ -80,34 +96,19 @@ func move_towards_player():
 	var player_normal = (player_node.global_position - global_position).normalized()
 	velocity.x = player_normal.x * SPEED
 	var player_direction = abs(rad2deg(player_normal.angle()))
-	if player_direction >= 90:
-		boss_action = BossAction.ADVANCING
-		SPEED = full_speed
-		if distance_to_player < cannon_range:
-			fire_cannon()
-	elif player_direction < 90:
-		boss_action = BossAction.RETREATING
-		SPEED = reduced_speed
-		if distance_to_player < pistol_range:
-			fire_pistol()
+	if player_direction >= 90 and distance_to_player < cannon_range:
+		fire_cannon()
+	elif player_direction < 90 and distance_to_player < horizontal_pistol_range:
+		fire_pistol()
 			
 func _physics_process(_delta):
-	match boss_action:
-		BossAction.STANDING:
-			if not is_attacking:
-				tankman_player.play("Walking")
-				tankman_player.advance(0)
+	if not is_attacking:
+		tankman_player.play("Walking")
+		tankman_player.advance(0)
+		match boss_action:
+			BossAction.STANDING:
 				tankman_player.stop(true)
 				if player_node.IN_BOSS_FIGHT:
-					change_state(BossAction.ADVANCING)
-		BossAction.ADVANCING:
-			if not tankman_player.is_playing():
-				tankman_player.play("Walking")
-				tankman_player.advance(0)
-			if not is_attacking:
-				move_towards_player()
-		BossAction.RETREATING:
-			tankman_player.play("Fire (Secondary) (Horizontal)")
-			tankman_player.advance(0)
-			if not is_attacking:
+					change_state(BossAction.ADVANCING, false)
+			BossAction.ADVANCING, BossAction.RETREATING:
 				move_towards_player()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/LOLZ.ogg-53354fcf05bb849be3f321e8f5e7946d.oggstr"
+
+[deps]
+
+source_file="res://assets/music/LOLZ.ogg"
+dest_files=[ "res://.import/LOLZ.ogg-53354fcf05bb849be3f321e8f5e7946d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
