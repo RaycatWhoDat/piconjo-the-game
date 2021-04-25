@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/TitleScreen.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/Chalky Bronson.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/TitleScreen.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleScreenImage" type="TextureRect" parent="."]
+margin_right = 842.0
+margin_bottom = 504.0
+rect_scale = Vector2( 1.27295, 1.27295 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Subtitle" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -273.498
+margin_top = -60.9781
+margin_right = -16.4979
+margin_bottom = -12.9781
+custom_fonts/font = SubResource( 1 )
+text = "Press any key"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FadeInOut" type="Tween" parent="Subtitle"]

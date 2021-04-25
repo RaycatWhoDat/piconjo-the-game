@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/TankmanCannon.mp3-85cfab07f7a0099e0ab2b46af36ebad8.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/TankmanCannon.mp3"
+dest_files=[ "res://.import/TankmanCannon.mp3-85cfab07f7a0099e0ab2b46af36ebad8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -29,26 +29,24 @@ texture = ExtResource( 1 )
 
 [node name="Fire" parent="." instance=ExtResource( 2 )]
 position = Vector2( -231.348, 66.6708 )
-frame = 0
+frame = 1
 
 [node name="Fire2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -287.076, 160.779 )
-frame = 0
+frame = 1
 
 [node name="Fire3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -119.221, 255.889 )
 scale = Vector2( 1, 1.01362 )
-frame = 0
+frame = 1
 
 [node name="Fire4" parent="." instance=ExtResource( 2 )]
 position = Vector2( -176.13, -12.1625 )
 scale = Vector2( 1, 1.01362 )
-frame = 1
 
 [node name="Fire5" parent="." instance=ExtResource( 2 )]
 position = Vector2( -232.617, -11.9733 )
 scale = Vector2( 1, 1.01362 )
-frame = 1
 
 [node name="Building1" type="CollisionShape2D" parent="."]
 position = Vector2( -449.331, 230.379 )

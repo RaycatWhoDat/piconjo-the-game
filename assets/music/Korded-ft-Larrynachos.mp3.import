@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Korded-ft-Larrynachos.mp3-1abee0e5a1ad9ee22ca5cfae4da59aee.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Korded-ft-Larrynachos.mp3"
+dest_files=[ "res://.import/Korded-ft-Larrynachos.mp3-1abee0e5a1ad9ee22ca5cfae4da59aee.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

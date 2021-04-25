@@ -68,4 +68,5 @@ position = Vector2( 1241.89, -2.38647 )
 
 [node name="BossArea3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2441.51, -9.51367 )
+
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_DeathZone_body_entered"]

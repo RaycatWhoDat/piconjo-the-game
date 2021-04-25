@@ -16,7 +16,7 @@ extents = Vector2( 59.9648, 29.7907 )
 [node name="Arena1" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2( 6.35681, -55.8542 )
 texture = ExtResource( 1 )
 
 [node name="Fire" parent="." instance=ExtResource( 3 )]

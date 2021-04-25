@@ -40,8 +40,8 @@ func die():
 	var tween_duration = 0.5
 	var camera_punchout_amount = -0.25
 	
-#	camera_node.start_shake(5)
-#	yield(camera_node.get_node("ScreenShakeInterval"), "timeout")
+	camera_node.start_shake(3)
+	
 	camera_tween_node.stop_all()
 	camera_tween_node.follow_property(camera_node, 
 		"position", 

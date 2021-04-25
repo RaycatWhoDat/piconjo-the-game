@@ -4,7 +4,7 @@ onready var screen_shake_tween = $ScreenShakeTween
 onready var screen_shake_interval = $ScreenShakeInterval
 onready var screen_shake_delay = $ScreenShakeDelay
 
-export (int) var SS_STRENGTH = 0.02
+export (int) var SS_STRENGTH = 3
 export (int) var SS_RESET_SPEED = 3
 
 var is_shaking = false
@@ -18,15 +18,15 @@ func reset_camera():
 	screen_shake_tween.start()
 	
 func shake_camera():
-	if is_shaking:
-		screen_shake_tween.interpolate_property(self, 
-			"offset", 
-			offset, 
-			Vector2(rand_range(-SS_STRENGTH, SS_STRENGTH), rand_range(-SS_STRENGTH, SS_STRENGTH)),
-			SS_RESET_SPEED, 
-			Tween.TRANS_SINE, 
-			Tween.EASE_OUT)
-		screen_shake_tween.start()
+#	if is_shaking and not screen_shake_tween.is_active:
+	screen_shake_tween.interpolate_property(self,
+		"offset",
+		offset, 
+		Vector2(rand_range(-SS_STRENGTH, SS_STRENGTH), rand_range(-SS_STRENGTH, SS_STRENGTH)),
+		SS_RESET_SPEED, 
+		Tween.TRANS_SINE, 
+		Tween.EASE_OUT)
+	screen_shake_tween.start()
 
 func start_shake(shake_length):
 	is_shaking = true
