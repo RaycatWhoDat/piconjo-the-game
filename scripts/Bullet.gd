@@ -11,7 +11,8 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("destructible"):
 		body.queue_free()
-	elif body.is_in_group("damageable"):
+	elif body.is_in_group("damageable") and not body.is_in_group("invincible"):
+		print(body.name)
 		body.take_damage(damage)
 		
 	queue_free()

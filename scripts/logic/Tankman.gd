@@ -34,6 +34,28 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	cannon_timer.connect("timeout", self, "change_state", [BossAction.ADVANCING, false])
 	pistol_timer.connect("timeout", self, "change_state", [BossAction.RETREATING, false])
+	# DEBUG: Remove this.
+#	instakill()
+
+func fire_cannonball():
+	var cannonball = Cannonball.instance()
+	owner.add_child(cannonball)
+	cannonball.global_transform = $CannonMuzzle.global_transform
+	
+func start_cannon_animation(firing_animation, timer, delay):
+	tankman_player.play(firing_animation)
+	tankman_player.advance(0)
+	timer.start(delay)
+	$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanCannon.wav")
+	$TankmanAudioPlayer.volume_db = -5
+	$TankmanAudioPlayer.play()
+
+	var cannonball_timer = Timer.new()
+	cannonball_timer.set_one_shot(true)
+	cannonball_timer.wait_time = 0.2
+	cannonball_timer.connect("timeout", self, "fire_cannonball")
+	add_child(cannonball_timer)
+	cannonball_timer.start()
 
 func attack(timer, delay):
 	var firing_animation
@@ -53,17 +75,16 @@ func attack(timer, delay):
 			$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanUgh.wav")
 			$TankmanAudioPlayer.volume_db = -2.5
 			$TankmanAudioPlayer.play()
-			yield(get_tree().create_timer($TankmanAudioPlayer.stream.get_length()), "timeout")
-			tankman_player.play(firing_animation)
-			tankman_player.advance(0)
-			timer.start(delay)
-			$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanCannon.wav")
-			$TankmanAudioPlayer.volume_db = -5
-			$TankmanAudioPlayer.play()
-			yield(get_tree().create_timer(0.2), "timeout")
-			var cannonball = Cannonball.instance()
-			owner.add_child(cannonball)
-			cannonball.global_transform = $CannonMuzzle.global_transform
+			var ugh_timer = Timer.new()
+			ugh_timer.set_one_shot(true)
+			ugh_timer.wait_time = $TankmanAudioPlayer.stream.get_length()
+			ugh_timer.connect("timeout", self, "start_cannon_animation", [
+				firing_animation, 
+				timer, 
+				delay
+			])
+			add_child(ugh_timer)
+			ugh_timer.start()
 		elif "Secondary" in firing_animation:
 			tankman_player.play(firing_animation)
 			tankman_player.advance(0)
@@ -111,4 +132,5 @@ func _physics_process(_delta):
 				if player_node.IN_BOSS_FIGHT:
 					change_state(BossAction.ADVANCING, false)
 			BossAction.ADVANCING, BossAction.RETREATING:
-				move_towards_player()
+				if player_node:
+					move_towards_player()

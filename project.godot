@@ -29,6 +29,14 @@ config/icon="res://icon.png"
 
 Constants="*res://scripts/Constants.gd"
 
+[debug]
+
+gdscript/warnings/treat_warnings_as_errors=true
+
+[display]
+
+window/size/height=768
+
 [input]
 
 p1_attack={

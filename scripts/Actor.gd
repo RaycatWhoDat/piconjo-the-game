@@ -21,20 +21,22 @@ func flash():
 func unflash():
 	modify_color(Color.white)
 
-func update_health_bar(health_bar):
-	var health_tween
-	for child in health_bar.get_children():
-		if child is Tween:
-			health_tween = child
+func update_health_bar(health_bar, health_points):
+	if health_bar.value > health_points:
+		var health_tween
+		for child in health_bar.get_children():
+			if child is Tween:
+				health_tween = child
 		
-	health_tween.interpolate_property(health_bar,
-		"value",
-		health_bar.value,
-		HEALTH_POINTS,
-		0.2,
-		Tween.TRANS_LINEAR,
-		Tween.EASE_OUT)
-	health_tween.start()
+		if health_tween:
+			health_tween.interpolate_property(health_bar,
+				"value",
+				health_bar.value,
+				health_points,
+				0.2,
+				Tween.TRANS_LINEAR,
+				Tween.EASE_OUT)
+			health_tween.start()
 
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta

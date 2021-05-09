@@ -7,10 +7,10 @@
 extents = Vector2( 57.9199, 53 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 244.538, 134.746 )
+extents = Vector2( 244.538, 133.135 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 59.7004, 25.0116 )
+extents = Vector2( 59.7004, 24.6759 )
 
 [node name="Arena4" type="StaticBody2D"]
 
@@ -18,11 +18,11 @@ extents = Vector2( 59.7004, 25.0116 )
 texture = ExtResource( 1 )
 
 [node name="SmallBuilding" type="CollisionShape2D" parent="."]
-position = Vector2( -429, 266 )
+position = Vector2( -429, 267 )
 shape = SubResource( 1 )
 
 [node name="SmallBuilding2" type="CollisionShape2D" parent="."]
-position = Vector2( 432.007, 266.042 )
+position = Vector2( 432.007, 267.042 )
 shape = SubResource( 1 )
 
 [node name="LargeBuilding" type="CollisionShape2D" parent="."]
@@ -30,11 +30,11 @@ position = Vector2( 0.416, 177.74 )
 shape = SubResource( 2 )
 
 [node name="Sign" type="CollisionShape2D" parent="."]
-position = Vector2( -309.33, 138.004 )
+position = Vector2( -309.33, 139.004 )
 shape = SubResource( 3 )
 
 [node name="Sign2" type="CollisionShape2D" parent="."]
-position = Vector2( 312.453, 138.004 )
+position = Vector2( 312.453, 139.004 )
 shape = SubResource( 3 )
 
 [node name="Box" parent="." instance=ExtResource( 2 )]

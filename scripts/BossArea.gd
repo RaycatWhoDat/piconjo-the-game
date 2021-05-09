@@ -9,11 +9,46 @@ func setup_health_bar():
 	health_bar.visible = true
 	boss_name.visible = true
 
+func crossfade_music():
+	var music_player = get_node("/root/Game/GlobalMusicPlayer")
+	var ambiance_player = get_node("/root/Game/AmbientMusicPlayer")
+	var crossfade_tween = get_node("/root/Game/CrossfadeIn")
+	var crossfade_time = 3
+	
+	var boss_music = Constants.MUSIC[get_name()]
+	if not boss_music == "":
+		music_player.stream = load(boss_music)
+		music_player.volume_db = -50
+		music_player.play()
+		
+		crossfade_tween.stop_all()
+		
+		crossfade_tween.interpolate_property(ambiance_player, 
+			"volume_db", 
+			ambiance_player.volume_db, 
+			-50, 
+			crossfade_time,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN)
+		
+		crossfade_tween.interpolate_property(music_player, 
+			"volume_db", 
+			music_player.volume_db, 
+			-2.5, 
+			crossfade_time,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN)
+
+		crossfade_tween.start()
+
 func handle_player_entering_arena(body):
 	var player_node = body
 	var camera_node = get_node("/root/Game/Camera")
 	var tween_node = camera_node.get_node("BossLockTween")
-	var camera_punchout_amount = 0.25
+	
+	crossfade_music()
+	
+	var camera_punchout_amount = 0.1
 	
 	tween_node.stop_all()
 	tween_node.interpolate_property(camera_node, 

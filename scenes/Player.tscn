@@ -134,6 +134,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "PiconjoIdleAttackGunLeft"
@@ -259,6 +271,18 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -15.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -386,6 +410,42 @@ tracks/9/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("SlashArea/SwordShape:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -35.1811, 22.5583 ), Vector2( -4.8404, 20.6855 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("SlashArea/SwordShape:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -15.0, 0.0 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "PiconjoIdleAttackSwordLeft"
@@ -512,6 +572,42 @@ tracks/9/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("SlashArea/SwordShape:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -10.459, 44.414 ), Vector2( -4.209, 64.914 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("SlashArea/SwordShape:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -45.0, -90.0 ]
+}
 
 [sub_resource type="Animation" id=6]
 tracks/0/type = "value"
@@ -557,6 +653,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -608,6 +716,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -665,6 +785,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "PiconjoIdleSwordLeft"
@@ -712,6 +844,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -830,6 +974,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 length = 0.2
@@ -942,6 +1098,18 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -15.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1260,6 +1428,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=15]
 length = 0.2
@@ -1320,6 +1500,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1391,6 +1583,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "PiconjoJumpSwordLeft"
@@ -1452,6 +1656,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1582,6 +1798,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=19]
 length = 0.8
@@ -1707,6 +1935,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [ -15.0 ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=20]
 length = 0.6
@@ -1767,6 +2007,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1837,6 +2089,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=22]
 length = 0.6
@@ -1897,6 +2161,18 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1967,6 +2243,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("SlashArea/SwordShape:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="CapsuleShape2D" id=24]
 radius = 6.12816
@@ -1981,7 +2269,8 @@ collision_mask = 5
 script = ExtResource( 5 )
 
 [node name="Muzzle" type="Position2D" parent="."]
-position = Vector2( 48, 25 )
+position = Vector2( -16, 26 )
+rotation = 3.14159
 scale = Vector2( 0.5, 0.5 )
 
 [node name="PiconjoShape" type="CollisionShape2D" parent="."]
@@ -2013,22 +2302,39 @@ anims/PiconjoWalkSword = SubResource( 22 )
 anims/PiconjoWalkSwordLeft = SubResource( 23 )
 
 [node name="PiconjoAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = -15.0
 
 [node name="PiconjoSprite" parent="." instance=ExtResource( 1 )]
 position = Vector2( 24.2584, 19.9392 )
 scale = Vector2( 0.663509, 0.663509 )
-animation = "Attack (Idle) (Gun)"
-frame = 1
-offset = Vector2( -1, 0 )
+animation = "Attack (Idle) (Sword)"
+frame = 3
+offset = Vector2( -37, -7 )
+flip_h = true
 
 [node name="SwordArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="SwordShape" type="CollisionShape2D" parent="SwordArea"]
-position = Vector2( 7.81043, 8.07567 )
-rotation = -0.788889
+position = Vector2( -13, 24.5 )
+rotation = 1.5708
 shape = SubResource( 24 )
+
+[node name="SlashArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 2 )
+
+[node name="SwordShape" type="CollisionPolygon2D" parent="SlashArea"]
+position = Vector2( -4.209, 64.914 )
+rotation = -1.5708
+scale = Vector2( 1.19664, 0.776237 )
+build_mode = 1
+polygon = PoolVector2Array( 60.6119, 7.50167, 28.467, 7.50167, 28.467, -26.6275, 35.6103, -27.0243, 43.9441, -23.0558, 51.4843, -15.1188, 57.4371, -5.59439 )
 disabled = true
+
 [connection signal="body_entered" from="SwordArea" to="SwordArea" method="_on_SwordArea_body_entered"]
+[connection signal="body_entered" from="SlashArea" to="SlashArea" method="_on_SwordArea_body_entered"]

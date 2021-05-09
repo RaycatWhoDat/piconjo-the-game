@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://assets/music/Ambient-1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Levels.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/bgs/bg_sky.png" type="Texture" id=4]
@@ -18,7 +19,17 @@
 
 [node name="GlobalSoundPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="CrossfadeIn" type="Tween" parent="."]
+
+[node name="CrossfadeOut" type="Tween" parent="."]
+
+[node name="AmbientMusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -2.5
+autoplay = true
+
 [node name="GlobalMusicPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -50.0
 
 [node name="Levels" parent="." instance=ExtResource( 3 )]
 position = Vector2( 464, 498 )
@@ -44,7 +55,6 @@ wait_time = 0.2
 follow_viewport_scale = 0.5
 
 [node name="HeatHazeColoration" type="CanvasModulate" parent="Camera/Background"]
-visible = false
 color = Color( 0.972549, 0.823529, 0.776471, 1 )
 
 [node name="Sky" type="ParallaxLayer" parent="Camera/Background"]
@@ -92,7 +102,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 6144, 215 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1331.46, 341.868 )
+position = Vector2( 1049.01, 403.063 )
 
 [node name="BulletDelay" type="Timer" parent="Player"]
 process_mode = 0
@@ -158,3 +168,15 @@ __meta__ = {
 }
 
 [node name="BossHPTween" type="Tween" parent="UI/BossHealthBar"]
+
+[node name="CrimsonScreen" type="ColorRect" parent="UI"]
+margin_left = -270.833
+margin_top = -334.978
+margin_right = 1870.17
+margin_bottom = 1003.02
+color = Color( 1, 0.113725, 0.00392157, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" type="Tween" parent="UI/CrimsonScreen"]

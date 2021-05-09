@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/tankman/TankmanWalking-0.png" type="Texture" id=1]
 [ext_resource path="res://assets/tankman/TankmanFirePrimary-1.png" type="Texture" id=2]
@@ -268,9 +268,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 55.2857, 3.00543 )
-
 [sub_resource type="CircleShape2D" id=7]
 radius = 18.4408
 
@@ -291,14 +288,15 @@ anims/Walking = SubResource( 4 )
 
 [node name="TankmanSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
-animation = "Fire (Secondary) (Vertical)"
-offset = Vector2( 0, 1 )
+animation = "Walking"
 
-[node name="TankmanShape" type="CollisionShape2D" parent="."]
-position = Vector2( 10.295, 54.823 )
-scale = Vector2( 1.08498, 0.057007 )
-shape = SubResource( 6 )
-one_way_collision = true
+[node name="TankmanShape" type="CollisionPolygon2D" parent="." groups=[
+"invincible",
+]]
+position = Vector2( 7.42273, -0.930855 )
+scale = Vector2( 1.085, 0.579 )
+build_mode = 1
+polygon = PoolVector2Array( -42.6114, 96.2892, 55.0411, 96.2892, 58.5286, 87.2121, 58.5286, 75.2304, 43.6095, 46.547, 43.8033, 35.2915, 34.6968, 29.4822, 26.9466, -18.4446, 3.88975, -32.2417, -19.1671, -31.5155, -30.7924, 10.965, -36.9925, 10.965, -36.9925, 21.8575, -47.8428, 21.8575, -55.0117, 35.6546, -55.2055, 42.19, -51.9117, 48.7255, -52.2992, 71.5996, -49.0053, 90.4799 )
 
 [node name="CannonMuzzle" type="Position2D" parent="."]
 position = Vector2( -61.3518, -30.204 )

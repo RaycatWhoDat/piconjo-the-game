@@ -1,5 +1,7 @@
 extends Actor
 
+onready var ambiance_player = get_node("/root/Game/AmbientMusicPlayer")
+
 func _ready():
 	if is_in_group("boss1"):
 		HEALTH_POINTS = Constants.BOSS_1_HEALTH_POINTS
@@ -32,15 +34,42 @@ func cleanup():
 	player_node.IN_BOSS_FIGHT = false
 	disable_boss_area()
 
+func crossfade_music():
+	var music_player = get_node("/root/Game/GlobalMusicPlayer")
+	var crossfade_tween = get_node("/root/Game/CrossfadeOut")
+	var crossfade_time = 3
+	
+	ambiance_player.play()
+	
+	crossfade_tween.stop_all()	
+	crossfade_tween.interpolate_property(ambiance_player, 
+		"volume_db", 
+		ambiance_player.volume_db, 
+		-2.5, 
+		crossfade_time,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN)
+		
+	crossfade_tween.interpolate_property(music_player, 
+		"volume_db", 
+		music_player.volume_db, 
+		-50, 
+		crossfade_time,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN)
+
+	crossfade_tween.start()
+	
 func die():
 	var camera_node = get_node("/root/Game/Camera")
 	var player_node = get_node("/root/Game/Player")
+
 #	var shake_tween_node = camera_node.get_node("ScreenShakeTween")
 	var camera_tween_node = camera_node.get_node("BossLockTween")
 	var tween_duration = 0.5
-	var camera_punchout_amount = -0.25
+	var camera_punchout_amount = -0.1
 	
-	camera_node.start_shake(3)
+#	camera_node.start_shake(3)
 	
 	camera_tween_node.stop_all()
 	camera_tween_node.follow_property(camera_node, 
@@ -59,6 +88,10 @@ func die():
 		Tween.TRANS_EXPO, 
 		Tween.EASE_OUT)
 	camera_tween_node.start()
+	
+	if not ambiance_player.playing:
+		crossfade_music()
+	
 	cleanup()
 	queue_free()
 
@@ -72,16 +105,27 @@ func take_damage(damage):
 		var health_bar = get_node("/root/Game/UI/BossHealthBar")
 		var boss_name = get_node("/root/Game/UI/BossName")
 
-		HEALTH_POINTS -= damage
-		update_health_bar(health_bar)
+		var flash_timer = Timer.new()
+		flash_timer.set_one_shot(true)
+		flash_timer.wait_time = 0.08
+		flash_timer.connect("timeout", self, "handle_damage", [
+			health_bar, 
+			boss_name, 
+			player_node, 
+			damage
+		])
+		add_child(flash_timer)
+		flash_timer.start()
 
-		yield(get_tree().create_timer(0.08), "timeout")
-		
-		if HEALTH_POINTS <= 0:
-			health_bar.visible = false
-			boss_name.visible = false
-			player_node.number_of_bosses_killed += 1
-			call_deferred("die")
-		else:	
-			unflash()
+func handle_damage(health_bar, boss_name, player_node, damage):
+	HEALTH_POINTS -= damage
+	update_health_bar(health_bar, HEALTH_POINTS)
+	
+	if HEALTH_POINTS <= 0:
+		health_bar.visible = false
+		boss_name.visible = false
+		player_node.number_of_bosses_killed += 1
+		call_deferred("die")
+	else:	
+		unflash()
 
