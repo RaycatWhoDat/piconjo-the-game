@@ -1,5 +1,9 @@
 extends Area2D
 
+func _ready():
+	# warning-ignore: return_value_discarded
+	get_node("/root/Game/CrossfadeIn").connect("tween_all_completed", self, "print_message")
+
 func setup_health_bar():
 	var health_bar = get_node("/root/Game/UI/BossHealthBar")
 	var boss_name = get_node("/root/Game/UI/BossName")
@@ -8,6 +12,9 @@ func setup_health_bar():
 	boss_name.text = Constants.BOSS_NAMES[get_name()]
 	health_bar.visible = true
 	boss_name.visible = true
+
+func print_message():
+	print("Safe to instakill.")
 
 func crossfade_music():
 	var music_player = get_node("/root/Game/GlobalMusicPlayer")

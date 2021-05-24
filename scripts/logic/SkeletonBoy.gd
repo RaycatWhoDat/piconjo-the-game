@@ -27,7 +27,9 @@ var directionality = 0
 
 func _init():
 	SPEED *= 1.4
-	pass
+
+func is_player_present():
+	return player_node.IN_BOSS_FIGHT and player_node.number_of_bosses_killed == 1
 
 func change_animation():
 	var animation_player_node = get_node(str(entity_name, "Player"))
@@ -55,12 +57,17 @@ func change_animation():
 			if current_animation_name:
 				var start_time = animation_player_node.current_animation_position
 				animation_player_node.seek(round(min(start_time, animation_player_node.current_animation_length)))
+	else:
+		print("Missing animation! %s" % next_animation_name)
 
 
 func handle_landing():
 	if is_on_floor():
-		velocity.y = 0
+		velocity = Vector2.ZERO
 		extra_jumps = MAX_EXTRA_JUMPS
+		if is_player_present() and $JumpTimer.time_left <= 0:
+			jump()
+			$JumpTimer.start()
 	else:
 		movement_state = MovementState.JUMP
 
@@ -84,7 +91,6 @@ func handle_movement(player_direction):
 			directionality = 1
 	
 	change_animation()
-	jump()
 	if not is_on_floor():
 		velocity.x = lerp(velocity.x, directionality * SPEED, ACCELERATION)
 
@@ -100,7 +106,7 @@ func _ready():
 	
 func _physics_process(_delta):
 	handle_landing()
-	if player_node.IN_BOSS_FIGHT and player_node.number_of_bosses_killed == 1:
+	if is_player_present():
 		move_towards_player()
 		if not music_player.playing:
 			music_player.stream = load("res://assets/music/Korded-ft-Larrynachos.mp3")

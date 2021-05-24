@@ -11,7 +11,7 @@ export (int) var BOSS_3_HEALTH_POINTS = 25
 export (int) var BOSS_4_HEALTH_POINTS = 30
 
 export (String) var BOSS_1_NAME = "Tankman"
-export (String) var BOSS_2_NAME = "Skeleton Boy"
+export (String) var BOSS_2_NAME = "Skull Kid"
 export (String) var BOSS_3_NAME = "Strawberry Clock"
 export (String) var BOSS_4_NAME = "P.I.C.O"
 

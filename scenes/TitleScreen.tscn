@@ -84,7 +84,6 @@ __meta__ = {
 [node name="FadeInOut" type="Tween" parent="Subtitle"]
 
 [node name="CrimsonScreen" type="ColorRect" parent="."]
-visible = false
 margin_left = -123.0
 margin_top = -17.0
 margin_right = 1107.0

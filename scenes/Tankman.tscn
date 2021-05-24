@@ -268,13 +268,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=6]
 radius = 18.4408
 
 [node name="Tankman" type="KinematicBody2D" groups=[
 "boss",
 "boss1",
-"damageable",
 ]]
 collision_layer = 3
 collision_mask = 3
@@ -313,9 +312,11 @@ process_mode = 0
 wait_time = 0.1
 one_shot = true
 
-[node name="TankmanDamageArea" type="CollisionShape2D" parent="."]
+[node name="TankmanDamageArea" type="CollisionShape2D" parent="." groups=[
+"damageable",
+]]
 position = Vector2( 1.06067, -37.4767 )
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="TankmanAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
