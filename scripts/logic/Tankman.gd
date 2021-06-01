@@ -34,8 +34,6 @@ func _ready():
 	# warning-ignore:return_value_discarded
 	cannon_timer.connect("timeout", self, "change_state", [BossAction.ADVANCING, false])
 	pistol_timer.connect("timeout", self, "change_state", [BossAction.RETREATING, false])
-	# DEBUG: Remove this.
-#	instakill()
 
 func fire_cannonball():
 	var cannonball = Cannonball.instance()
@@ -47,7 +45,7 @@ func start_cannon_animation(firing_animation, timer, delay):
 	tankman_player.advance(0)
 	timer.start(delay)
 	$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanCannon.wav")
-	$TankmanAudioPlayer.volume_db = -5
+	$TankmanAudioPlayer.volume_db = -10
 	$TankmanAudioPlayer.play()
 
 	var cannonball_timer = Timer.new()
@@ -73,7 +71,7 @@ func attack(timer, delay):
 		velocity = Vector2.ZERO
 		if "Primary" in firing_animation:
 			$TankmanAudioPlayer.stream = load("res://assets/sounds/TankmanUgh.wav")
-			$TankmanAudioPlayer.volume_db = -2.5
+			$TankmanAudioPlayer.volume_db = -10
 			$TankmanAudioPlayer.play()
 			var ugh_timer = Timer.new()
 			ugh_timer.set_one_shot(true)

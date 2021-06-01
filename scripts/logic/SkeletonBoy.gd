@@ -3,9 +3,7 @@ extends "res://scripts/Boss.gd"
 export (PackedScene) var Bullet = preload("res://scenes/Bullet.tscn")
 
 export (float, 0.0, 5.0) var JUMP_SPEED_MULTIPLIER = 0.5
-export (int) var MAX_EXTRA_JUMPS = 2
 export (float, 0.0, 1.0) var BULLET_DELAY_TIME = 0.4
-export (float, 0.0, 1.0) var EXTRA_JUMP_DECAY = 0.75
 export (int) var MAGIC_LIMIT = 525
 
 onready var skull_kid_player = get_node("SkullKidPlayer")
@@ -20,7 +18,6 @@ var weapon_names = ["Gun", "Sword"]
 var movement_state = MovementState.IDLE
 var weapon_type = WeaponType.GUN
 
-var extra_jumps = MAX_EXTRA_JUMPS
 var is_attacking = false
 var is_facing_left = true
 var directionality = 0
@@ -64,20 +61,27 @@ func change_animation():
 func handle_landing():
 	if is_on_floor():
 		velocity = Vector2.ZERO
-		extra_jumps = MAX_EXTRA_JUMPS
+		is_attacking = true
 		if is_player_present() and $JumpTimer.time_left <= 0:
 			jump()
 			$JumpTimer.start()
 	else:
 		movement_state = MovementState.JUMP
+		is_attacking = false
+
+func handle_attacking():
+	if weapon_type == WeaponType.GUN:
+		if is_attacking and $BulletDelay.time_left <= 0:
+			var bullet = Bullet.instance()
+			bullet.BASE_DAMAGE = 2
+			owner.add_child(bullet)
+			bullet.global_transform = $Muzzle.global_transform
+			$BulletDelay.stop()
+			$BulletDelay.start(BULLET_DELAY_TIME)
 
 func jump():
 	if is_on_floor():
 		velocity.y -= JUMP_SPEED_MULTIPLIER * GRAVITY
-	elif extra_jumps > 0:
-		velocity.y = 0
-		velocity.y -= JUMP_SPEED_MULTIPLIER * GRAVITY * EXTRA_JUMP_DECAY
-		extra_jumps -= 1
 
 func handle_movement(player_direction):
 	if is_on_floor():
@@ -94,7 +98,6 @@ func handle_movement(player_direction):
 	if not is_on_floor():
 		velocity.x = lerp(velocity.x, directionality * SPEED, ACCELERATION)
 
-
 func move_towards_player():
 	var player_normal = (player_node.global_position - global_position).normalized()
 	var player_direction = abs(rad2deg(player_normal.angle()))
@@ -105,8 +108,9 @@ func _ready():
 	$SkullKidPlayer.advance(0)
 	
 func _physics_process(_delta):
-	handle_landing()
 	if is_player_present():
+		handle_landing()
+		handle_attacking()
 		move_towards_player()
 		if not music_player.playing:
 			music_player.stream = load("res://assets/music/Korded-ft-Larrynachos.mp3")

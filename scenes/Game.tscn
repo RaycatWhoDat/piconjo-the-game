@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/music/Ambient-1.mp3" type="AudioStream" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -14,10 +14,15 @@
 [ext_resource path="res://assets/ui/BossHealthBarFG.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/NameFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://scripts/Camera.gd" type="Script" id=14]
+[ext_resource path="res://assets/pico/PicoPhase2.png" type="Texture" id=15]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 2
 
 [node name="Game" type="Node2D"]
 
 [node name="GlobalSoundPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [node name="CrossfadeIn" type="Tween" parent="."]
 
@@ -25,7 +30,7 @@
 
 [node name="AmbientMusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -2.5
+volume_db = -15.0
 autoplay = true
 
 [node name="GlobalMusicPlayer" type="AudioStreamPlayer" parent="."]
@@ -33,6 +38,23 @@ volume_db = -50.0
 
 [node name="Levels" parent="." instance=ExtResource( 3 )]
 position = Vector2( 464, 498 )
+
+[node name="PicorothBG" type="ColorRect" parent="."]
+self_modulate = Color( 0.862745, 0.807843, 0.807843, 0.964706 )
+material = SubResource( 1 )
+margin_left = 4641.0
+margin_top = -395.0
+margin_right = 5975.0
+margin_bottom = 879.0
+color = Color( 1, 1, 1, 0.670588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Picoroth" type="Sprite" parent="."]
+position = Vector2( 5318.32, 26.8088 )
+scale = Vector2( 1.89764, 1.89764 )
+texture = ExtResource( 15 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( -299.91, 379.815 )
@@ -55,6 +77,7 @@ wait_time = 0.2
 follow_viewport_scale = 0.5
 
 [node name="HeatHazeColoration" type="CanvasModulate" parent="Camera/Background"]
+visible = false
 color = Color( 0.972549, 0.823529, 0.776471, 1 )
 
 [node name="Sky" type="ParallaxLayer" parent="Camera/Background"]
@@ -64,7 +87,7 @@ motion_scale = Vector2( 0.2, 0.2 )
 position = Vector2( 1716.83, 171.986 )
 texture = ExtResource( 4 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6144, 900 )
+region_rect = Rect2( 0, 0, 8500, 900 )
 
 [node name="FarBuildings" type="ParallaxLayer" parent="Camera/Background"]
 motion_scale = Vector2( 0.4, 0.4 )
@@ -73,7 +96,7 @@ motion_scale = Vector2( 0.4, 0.4 )
 position = Vector2( 1717.57, 327.005 )
 texture = ExtResource( 6 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6144, 513 )
+region_rect = Rect2( 0, 0, 8500, 513 )
 
 [node name="MidBuildings" type="ParallaxLayer" parent="Camera/Background"]
 motion_scale = Vector2( 0.6, 0.6 )
@@ -82,7 +105,7 @@ motion_scale = Vector2( 0.6, 0.6 )
 position = Vector2( 1712.98, 397.947 )
 texture = ExtResource( 5 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6144, 516 )
+region_rect = Rect2( 0, 0, 8500, 516 )
 
 [node name="CloseBuildings" type="ParallaxLayer" parent="Camera/Background"]
 motion_scale = Vector2( 0.8, 0.8 )
@@ -91,7 +114,7 @@ motion_scale = Vector2( 0.8, 0.8 )
 position = Vector2( 1718.44, 504.822 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6144, 376 )
+region_rect = Rect2( 0, 0, 8500, 376 )
 
 [node name="Ground" type="ParallaxLayer" parent="Camera/Background"]
 
@@ -99,10 +122,10 @@ region_rect = Rect2( 0, 0, 6144, 376 )
 position = Vector2( 1654, 848.609 )
 texture = ExtResource( 8 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 6144, 215 )
+region_rect = Rect2( 0, 0, 8500, 215 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1049.01, 403.063 )
+position = Vector2( -267.528, 405.135 )
 
 [node name="BulletDelay" type="Timer" parent="Player"]
 process_mode = 0

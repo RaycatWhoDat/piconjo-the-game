@@ -252,14 +252,14 @@ animations = [ {
 "name": "Fire (Secondary) (Vertical)",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "Walking",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Fire (Secondary) (Horizontal)",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Walking",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
@@ -320,3 +320,4 @@ shape = SubResource( 6 )
 
 [node name="TankmanAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+volume_db = -10.0

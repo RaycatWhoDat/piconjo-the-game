@@ -1,5 +1,5 @@
 extends Area2D
-
+	
 func _on_SwordArea_body_entered(body):
 	if not body.is_in_group("invincible"):
 		if body.is_in_group("destructible") or body.is_in_group("boss"):

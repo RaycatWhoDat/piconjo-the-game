@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Piconjo: Teh 6aym"
 config/description="A game made for Pico Day 2021"
-run/main_scene="res://scenes/TitleScreen.tscn"
+run/main_scene="res://scenes/IntroVideo.tscn"
 config/icon="res://icon.png"
 
 [autoload]

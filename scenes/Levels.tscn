@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Arena2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/BuildingConnector.tscn" type="PackedScene" id=2]
@@ -11,9 +11,20 @@
 [ext_resource path="res://scenes/Tankman.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/SkullKid.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/StrawberryClock.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/PICO.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3377.48, 93.3262 )
+extents = Vector2( 4314.04, 93.3262 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3487.23, -225.03, 0, 0, 0, 0, 3343.4, -223.532, 0, 0, 0, 0, 3342.65, -183.077, 0, 0, 0, 0, 3627.33, -181.579, 0, 0, 0, 0, 3628.07, -134.382, 0, 0, 0, 0, 3343.4, -136.63, 0, 0, 0, 0, 3342.65, -92.4297, 0, 0, 0, 0, 3627.33, -90.9314, 0, 0, 0, 0, 3627.33, -224.281, 0, 0, 0, 0, 3487.98, -224.281 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3490.61, -186.655, 0, 0, 0, 0, 3525.08, -115.179, 0, 0, 0, 0, 3550.31, -93.3153, 0, 0, 0, 0, 3595.72, -94.1562, 0, 0, 0, 0, 3625.99, -107.611, 0, 0, 0, 0, 3649.54, -142.087, 0, 0, 0, 0, 3652.06, -192.541, 0, 0, 0, 0, 3632.72, -230.381, 0, 0, 0, 0, 3582.26, -247.199, 0, 0, 0, 0, 3545.26, -246.358, 0, 0, 0, 0, 3504.06, -215.245, 0, 0, 0, 0, 3470.42, -116.86, 0, 0, 0, 0, 3438.47, -98.3607, 0, 0, 0, 0, 3414.08, -89.1108, 0, 0, 0, 0, 3374.56, -96.6789, 0, 0, 0, 0, 3361.95, -119.383, 0, 0, 0, 0, 3353.54, -146.292, 0, 0, 0, 0, 3351.02, -178.246, 0, 0, 0, 0, 3358.58, -215.245, 0, 0, 0, 0, 3372.04, -236.268, 0, 0, 0, 0, 3393.9, -245.518, 0, 0, 0, 0, 3418.29, -251.404, 0, 0, 0, 0, 3451.08, -242.154, 0, 0, 0, 0, 3467.06, -233.745, 0, 0, 0, 0, 3486.4, -211.882, 0, 0, 0, 0, 3490.61, -186.655 )
+}
 
 [node name="Levels" type="Node2D"]
 
@@ -37,6 +48,18 @@ position = Vector2( 1806.58, 128.393 )
 [node name="BuildingConnector3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -586.185, 95.2692 )
 
+[node name="BuildingConnector4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4425.96, 139.912 )
+rotation = -1.57079
+
+[node name="BuildingConnector5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4864.78, 142.582 )
+rotation = -1.57079
+
+[node name="BuildingConnector6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 5296.28, 145.251 )
+rotation = -1.57079
+
 [node name="Sign" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2040.13, -42.3318 )
 
@@ -52,7 +75,7 @@ collision_mask = 7
 script = ExtResource( 7 )
 
 [node name="DeathAreaShape" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2( 1475.92, 402.665 )
+position = Vector2( 2445.22, 416.919 )
 shape = SubResource( 1 )
 
 [node name="Tankman" parent="." instance=ExtResource( 9 )]
@@ -70,10 +93,26 @@ scale = Vector2( 0.659268, 0.659268 )
 position = Vector2( 1241.89, -2.38647 )
 
 [node name="StrawberryClock" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3649, -70 )
+position = Vector2( 3491.51, -361.042 )
 scale = Vector2( 0.707433, 0.707433 )
 
 [node name="BossArea3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2441.51, -9.51367 )
+
+[node name="PICO" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3490.28, -417.462 )
+scale = Vector2( 0.326036, 0.326036 )
+
+[node name="BossArea4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2795.15, -192.083 )
+scale = Vector2( 1.93462, 1.93462 )
+
+[node name="SCPatrolPath" type="Path2D" parent="."]
+position = Vector2( 2.99658, -27.7187 )
+curve = SubResource( 2 )
+
+[node name="PICOPatrolPath" type="Path2D" parent="."]
+position = Vector2( 0.841064, 0.840881 )
+curve = SubResource( 3 )
 
 [connection signal="body_entered" from="DeathZone" to="DeathZone" method="_on_DeathZone_body_entered"]

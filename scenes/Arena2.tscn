@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/bgs/arena2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/SignArea.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.4464, 82.3672 )
@@ -63,13 +64,6 @@ shape = SubResource( 2 )
 position = Vector2( -16, -3 )
 shape = SubResource( 3 )
 
-[node name="Sign2" type="CollisionShape2D" parent="." groups=[
-"permeable",
-]]
-position = Vector2( 224.057, 13.8651 )
-shape = SubResource( 4 )
-one_way_collision = true
-
 [node name="Sign3" type="CollisionShape2D" parent="." groups=[
 "permeable",
 ]]
@@ -90,3 +84,6 @@ position = Vector2( 101, 40 )
 
 [node name="Box2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -501.923, 119.885 )
+
+[node name="SignArea" parent="." instance=ExtResource( 4 )]
+position = Vector2( -8.49487, 48.1376 )

@@ -2,6 +2,8 @@ extends Actor
 
 onready var ambiance_player = get_node("/root/Game/AmbientMusicPlayer")
 
+signal boss_killed
+
 func _ready():
 	if is_in_group("boss1"):
 		HEALTH_POINTS = Constants.BOSS_1_HEALTH_POINTS
@@ -11,6 +13,10 @@ func _ready():
 		HEALTH_POINTS = Constants.BOSS_3_HEALTH_POINTS
 	elif is_in_group("boss4"):
 		HEALTH_POINTS = Constants.BOSS_4_HEALTH_POINTS
+	elif is_in_group("boss5"):
+		HEALTH_POINTS = Constants.BOSS_5_HEALTH_POINTS
+	# warning-ignore: return_value_discarded
+	connect("boss_killed", get_node("/root/Game/Player"), "handle_victory")
 
 func disable_boss_area():
 	var boss_shape
@@ -20,11 +26,11 @@ func disable_boss_area():
 		boss_shape = get_node("/root/Game/Levels/BossArea2/BossAreaShape")
 	elif is_in_group("boss3"):
 		boss_shape = get_node("/root/Game/Levels/BossArea3/BossAreaShape")
-	elif is_in_group("boss4"):
+	elif is_in_group("boss5"):
 		boss_shape = get_node("/root/Game/Levels/BossArea4/BossAreaShape")
 	
 	if boss_shape:
-		boss_shape.call_deferred("set_disabled", true)
+		boss_shape.disabled = true
 
 func cleanup():
 	var camera_node = get_node("/root/Game/Camera")
@@ -33,6 +39,7 @@ func cleanup():
 	player_node.FOLLOW_PLAYER = true
 	player_node.IN_BOSS_FIGHT = false
 	disable_boss_area()
+	emit_signal("boss_killed")
 
 func crossfade_music():
 	var music_player = get_node("/root/Game/GlobalMusicPlayer")
@@ -45,7 +52,7 @@ func crossfade_music():
 	crossfade_tween.interpolate_property(ambiance_player, 
 		"volume_db", 
 		ambiance_player.volume_db, 
-		-2.5, 
+		-15, 
 		crossfade_time,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN)
@@ -100,7 +107,11 @@ func instakill():
 	
 func take_damage(damage):
 	var player_node = get_node("/root/Game/Player")
-	if player_node.IN_BOSS_FIGHT:
+	if get_name() == "PICO":
+		# warning-ignore: return_value_discarded
+		get_tree().change_scene("res://scenes/EndingVideo.tscn")
+		return
+	if player_node.IN_BOSS_FIGHT:		
 		flash()
 		var health_bar = get_node("/root/Game/UI/BossHealthBar")
 		var boss_name = get_node("/root/Game/UI/BossName")

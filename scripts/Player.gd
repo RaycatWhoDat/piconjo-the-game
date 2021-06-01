@@ -23,8 +23,8 @@ var extra_jumps = MAX_EXTRA_JUMPS
 var is_attacking = false
 var is_facing_left = false
 var is_dead = false
-# DEBUG: Remove this.
-var number_of_bosses_killed = 0 # 1
+var is_celebrating = false
+var number_of_bosses_killed = 0
 
 func _init():
 	HEALTH_POINTS = 25
@@ -41,7 +41,7 @@ func _ready():
 	player_health_bar.max_value = HEALTH_POINTS
 	player_health_bar.value = player_health_bar.max_value
 
-func change_animation():
+func change_animation(animation_name = null):
 	var animation_player_node = get_node(str(entity_name, "Player"))
 	var movement_name = movement_names[movement_state]
 	var attack_name = "Attack" if is_attacking else ""
@@ -56,7 +56,7 @@ func change_animation():
 	]
 	
 	var current_animation_name = animation_player_node.current_animation
-	var next_animation_name = "%s%s%s%s%s" % all_names
+	var next_animation_name = animation_name if animation_name else "%s%s%s%s%s" % all_names
 	if animation_player_node.has_animation(next_animation_name):
 		if current_animation_name == next_animation_name and animation_player_node.is_playing():
 			pass
@@ -67,6 +67,8 @@ func change_animation():
 			if current_animation_name:
 				var start_time = animation_player_node.current_animation_position
 				animation_player_node.seek(round(min(start_time, animation_player_node.current_animation_length)))
+	else:
+		print("Missing animation! %s" % next_animation_name)
 
 func jump():
 	if is_on_floor():
@@ -99,8 +101,6 @@ func handle_attacking():
 			bullet.transform = $Muzzle.global_transform
 			$BulletDelay.stop()
 			$BulletDelay.start(BULLET_DELAY_TIME)
-	elif weapon_type == WeaponType.SWORD:
-		pass
 
 func handle_movement():
 	var directionality = 0
@@ -111,7 +111,9 @@ func handle_movement():
 	
 	# Can't move while attacking with sword...?
 	# if weapon_type == WeaponType.GUN or weapon_type == WeaponType.SWORD and not is_attacking:
-	if Input.is_action_pressed("ui_left"):
+	if is_celebrating:
+		pass
+	elif Input.is_action_pressed("ui_left"):
 		is_facing_left = true
 		directionality = -1
 	elif Input.is_action_pressed("ui_right"):
@@ -130,8 +132,6 @@ func handle_movement():
 	velocity.x = lerp(velocity.x, walk_delta, primary_force)
 
 func handle_special_actions():
-	change_animation()
-	
 	if Input.is_action_just_pressed("p1_jump"):
 		jump()
 	
@@ -144,33 +144,34 @@ func handle_other_input():
 
 	if Input.is_action_just_pressed("ui_quit"):
 		get_tree().quit()
-	
-	# DEBUG: Remove this.
-	if Input.is_action_just_pressed("ui_instakill_boss"):
-		if IN_BOSS_FIGHT:
-			var boss_nodes = get_tree().get_nodes_in_group(str("boss", number_of_bosses_killed + 1))
-			for boss_node in boss_nodes:
-				boss_node.instakill()
 
 func handle_death():
 	# warning-ignore:return_value_discarded
 	is_dead = true
 	IN_BOSS_FIGHT = false
-	visible = false
-	var fade_duration = 1
+	velocity.x = 0
+	var fade_duration = 2.5
+	change_animation("PiconjoDeath%s%s" % [
+		weapon_names[weapon_type], 
+		"Left" if is_facing_left else ""
+	])
 	
 	var crimson_screen = get_node("/root/Game/UI/CrimsonScreen")
 	var crimson_fade = crimson_screen.get_node("Fade")
 	
 	crimson_fade.interpolate_property(crimson_screen, 
 		"color", 
-		Color(1, 0.113725, 0.003922, 0), 
-		Color(1, 0.113725, 0.003922, 1),
+		Color(0, 0, 0, 0), 
+		Color(0, 0, 0, 0),
 		fade_duration,
 		Tween.TRANS_LINEAR, 
 		Tween.EASE_IN_OUT)
 	crimson_fade.start()
-	yield(get_tree().create_timer(fade_duration), "timeout")
+
+	yield(get_tree().create_timer(fade_duration + 0.5), "timeout")
+	get_node("/root/Game/AmbientMusicPlayer").stop()
+	get_node("/root/Game/GlobalMusicPlayer").stop()
+	get_node("/root/Game/GlobalSoundPlayer").stop()
 	get_tree().change_scene("res://scenes/TitleScreen.tscn")
 
 func handle_landing():
@@ -189,10 +190,10 @@ func take_damage(damage):
 	HEALTH_POINTS -= damage
 	update_health_bar(health_bar, HEALTH_POINTS)
 	
+	unflash()
+	
 	if HEALTH_POINTS <= 0:
 		handle_death()
-	else:
-		unflash()
 
 func get_bottom_of_camera(camera_node):
 	var first_position = camera_node.get_position()
@@ -212,14 +213,33 @@ func handle_camera():
 		camera_node.position.y = min(position.y, MAGIC_LIMIT)
 		crimson_screen.rect_position = Vector2.ZERO
 
+func handle_victory():
+	is_celebrating = true
+	is_attacking = false
+	movement_state = MovementState.IDLE
+	change_animation()
+	var celebration_timer = Timer.new()
+	celebration_timer.one_shot = true
+	celebration_timer.wait_time = 1.5
+	celebration_timer.connect("timeout", self, "victory_pose")
+	add_child(celebration_timer)
+	celebration_timer.start()
+
+func victory_pose():
+	change_animation("PiconjoWin")
+	yield(get_tree().create_timer(1), "timeout")
+	is_celebrating = false
+
 func _physics_process(_delta):
 	var tween_node = get_node("/root/Game/Camera/BossLockTween")
 	
 	if not is_dead:
 		handle_movement()
 		handle_landing()
-		handle_special_actions()
-		handle_attacking()
+		if not is_celebrating:
+			change_animation()
+			handle_special_actions()
+			handle_attacking()
 	
 	handle_other_input()
 	

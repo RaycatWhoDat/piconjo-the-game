@@ -7,9 +7,10 @@ func _ready():
 func setup_health_bar():
 	var health_bar = get_node("/root/Game/UI/BossHealthBar")
 	var boss_name = get_node("/root/Game/UI/BossName")
-	health_bar.max_value = Constants.HEALTH_POINTS[get_name()]
+	var lookup_key = get_name()
+	health_bar.max_value = Constants.HEALTH_POINTS[lookup_key]
 	health_bar.value = health_bar.max_value
-	boss_name.text = Constants.BOSS_NAMES[get_name()]
+	boss_name.text = Constants.BOSS_NAMES[lookup_key]
 	health_bar.visible = true
 	boss_name.visible = true
 
@@ -23,30 +24,31 @@ func crossfade_music():
 	var crossfade_time = 3
 	
 	var boss_music = Constants.MUSIC[get_name()]
+	
+	crossfade_tween.stop_all()
 	if not boss_music == "":
 		music_player.stream = load(boss_music)
 		music_player.volume_db = -50
 		music_player.play()
 		
-		crossfade_tween.stop_all()
-		
-		crossfade_tween.interpolate_property(ambiance_player, 
-			"volume_db", 
-			ambiance_player.volume_db, 
-			-50, 
-			crossfade_time,
-			Tween.TRANS_LINEAR,
-			Tween.EASE_IN)
-		
 		crossfade_tween.interpolate_property(music_player, 
 			"volume_db", 
 			music_player.volume_db, 
-			-2.5, 
+			-15, 
 			crossfade_time,
 			Tween.TRANS_LINEAR,
 			Tween.EASE_IN)
-
-		crossfade_tween.start()
+		
+	crossfade_tween.interpolate_property(ambiance_player, 
+		"volume_db", 
+		ambiance_player.volume_db, 
+		-50, 
+		crossfade_time,
+		Tween.TRANS_LINEAR,
+		Tween.EASE_IN)
+	
+	crossfade_tween.start()
+		
 
 func handle_player_entering_arena(body):
 	var player_node = body
@@ -55,7 +57,7 @@ func handle_player_entering_arena(body):
 	
 	crossfade_music()
 	
-	var camera_punchout_amount = 0.1
+	var camera_punchout_amount = 0.4 if player_node.number_of_bosses_killed > 3 else 0.1
 	
 	tween_node.stop_all()
 	tween_node.interpolate_property(camera_node, 

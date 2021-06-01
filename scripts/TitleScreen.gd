@@ -28,8 +28,8 @@ func fade():
 func _ready():
 	crimson_fade.interpolate_property($CrimsonScreen, 
 		"color", 
-		Color(1, 0.113725, 0.003922, 1), 
-		Color(1, 0.113725, 0.003922, 0),
+		Color(0, 0, 0, 1), # Color(1, 0.113725, 0.003922, 1), 
+		Color(0, 0, 0, 0), # Color(1, 0.113725, 0.003922, 0),
 		fade_duration,
 		Tween.TRANS_LINEAR, 
 		Tween.EASE_IN_OUT)

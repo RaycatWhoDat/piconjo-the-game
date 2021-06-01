@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Phase_2_w_choir.mp3-10de6dc39a42e93d9f2d2c6848bf8cc5.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Phase_2_w_choir.mp3"
+dest_files=[ "res://.import/Phase_2_w_choir.mp3-10de6dc39a42e93d9f2d2c6848bf8cc5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
